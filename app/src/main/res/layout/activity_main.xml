@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".view.MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/llTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:background="@drawable/round_corner_bg"
+        android:elevation="@dimen/_2sdp"
+        android:orientation="horizontal">
+
+       <Spinner
+           android:id="@+id/spinner_source"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:backgroundTint="@color/black"
+           android:popupBackground="@drawable/spinner_back"
+           android:popupElevation="@dimen/_5sdp"
+           android:padding="@dimen/_8sdp"
+           android:layout_weight="1"/>
+
+       <Spinner
+           android:id="@+id/spinner_target"
+           android:layout_width="0dp"
+           android:layout_height="wrap_content"
+           android:backgroundTint="@color/black"
+           android:popupBackground="@drawable/spinner_back"
+           android:popupElevation="@dimen/_5sdp"
+           android:padding="@dimen/_8sdp"
+           android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/llTop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_15sdp"
+        android:background="@drawable/round_corner_bg"
+        android:elevation="@dimen/_2sdp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/source_et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/et_bg"
+            android:inputType="number"
+            android:gravity="end"
+            android:popupElevation="@dimen/_5sdp"
+            android:padding="@dimen/_8sdp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/resultTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/et_bg"
+            android:hint="0.0"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:gravity="end"
+            android:textSize="@dimen/_14sdp"
+            android:padding="@dimen/_8sdp"
+            android:layout_weight="1"/>
+
+
+    </LinearLayout>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_margin="@dimen/_15sdp"
+       android:background="@drawable/round_corner_bg"
+       android:elevation="@dimen/_2sdp"
+       android:padding="@dimen/_5sdp"
+       app:layout_constraintBottom_toTopOf="@+id/adLayout"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/llBottom">
+
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/rvCurrency"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          tools:listitem="@layout/layout_currency_item" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/adLayout"
+        layout="@layout/include_small_native_ad"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_130sdp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
